@@ -1,0 +1,27 @@
+So, this is done by using react as a script import which has a couple of consequences compared to react as a full environment
+
+Before that - plus / minus of doing it this way
+
+Minus: We have to include scripts in a correct order. We can reference something like <App /> in our index.js only if app is loaded before that on the htlm page
+Additional minus ^ - we need to include all scripts as type=text/babel scripts on our html page, this includes for any subcomponents (like, if we have a card where the 
+picture is also a component, that needs to be referenced too as a separate script)
+We lose some functionality as far as I understand it. One of these is including .css files for our components (although there is a workaround where we just link it in the jsx)
+It's a bit harder to get a view of what's happening, but I don't think our page is going to be that complicated anyway
+
+Plus:
+A LOT less overhead. If we use the create-react-app framework we end up with a couple of hundred packages, everyone needs to set up the framework the same way and we're 
+locked into a very special structure for the whole project
+create-react-app is a single page application. There is some tricks to do multipages but they are still loaded into the same single page container as far as I understand it.
+TBH, it's a bit beyond us atm to co-ordinate 7 people in two weeks to reach the level, especially if we need to also work on our solo projects
+
+
+
+My idea: We use react for the dynamic things (lists of stuff etc) here because it makes it a LOT easier to render dynamically (we can send in our list of objects,
+ apply a filter method on them and then use a map method to dynamically create a list, I'll do a proof of concept friday) but write everything else in a more classic way
+ with some js for data validation on our forms and button interactivity etc.
+ However, I'd 100% suggest remaking our tennis pages as react apps to get some feel for the framework (and it's kind of a requirement now so I wanna get on that)
+
+Final note: the  react-app includes a ton of bonus stuff (including some help with connecting to Databases etc) but it's still a frontend framework.
+We use it to create dynamically created pages.
+
+

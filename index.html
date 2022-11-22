@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- Possible we need to add defer to the end above -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- These are our react components-roots. We can have several of them in one -->
+    <div id="button_counter_container"></div>
+    <div id="root"></div>
+
+    <!-- Load our React components -->
+    <!--  Note the order here - a script can only access things that have already been loaded by a script above! -->
+    <!-- I think this is fine on our small assignment but can really mess things up if we try to do more complicated things -->
+    <script
+      type="text/babel"
+      src="./components/ButtonCounter/ButtonCounter.js"
+    ></script>
+    <script type="text/babel" src="./components/App.js" defer></script>
+    <script type="text/babel" src="./index.js" defer></script>
+  </body>
+</html>
