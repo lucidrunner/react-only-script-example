@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <CounterButton text="Hi!" />
       <p style={pStyle}>Hello World!</p>
-      <CounterButton useBlue="true" />
+      <CounterButton useGreen="1" />
     </div>
   );
 };

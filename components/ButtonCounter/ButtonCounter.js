@@ -14,7 +14,11 @@ const CounterButton = (props) => {
         href="components\ButtonCounter\ButtonCounter.css"
       />
       {/* ^ Ugly way of applying stylesheets to all these components but it works. */}
-      <button className={`counter-button`} onClick={handleClick}>
+      <button
+        className={`counter-button ${props.useGreen == 1 ? "green" : ""}`}
+        onClick={handleClick}
+      >
+        {/* ^We can also have some fun with conditionally adding classes via props like above*/}
         Click Me! {props.text}
         {/* ^ anything passed into the function is stored in the props with the name it is passed in with */}
       </button>
