@@ -1,6 +1,8 @@
 const CounterButton = (props) => {
   //This is how we set state in react. By doing this we now have this saved in the memory of the component and can manipulate it and it will remember it (as long as we don't fully reload the page)
   const [currentCount, setCurrentCount] = React.useState(0);
+  const [date, setDate] = React.useState();
+
   //We can also define other functions inside our component and let them do stuff
   //In this case this increments the counter
   const handleClick = () => {
